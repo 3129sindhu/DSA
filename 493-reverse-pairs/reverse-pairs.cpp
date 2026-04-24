@@ -26,11 +26,20 @@ public:
         int cnt=0;
         for(int i=low;i<=mid;i++)
         {
+
+            //two approaches
+            // while(right<=high && (nums[i]>2LL*nums[right]))
+            // {
+            //     cnt += (mid -i)+1;
+            //     right++;
+            // }
             while(right<=high && (nums[i]>2LL*nums[right]))
-            {
-                cnt+=(mid-i)+1;
+            { 
                 right++;
             }
+            cnt += right - (mid + 1);
+
+            
             
         }
         return cnt;
